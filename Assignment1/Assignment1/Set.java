@@ -38,8 +38,6 @@ public class Set implements SetInterface {
 
 	public void deleteElement(Identifier element) {
 
-		// take the last element into deleted element's index
-
 		if (isInSet(element)) {
 			Identifier[] temp = new Identifier[MAX_NUMBER_OF_ELEMENTS];
 
@@ -70,15 +68,7 @@ public class Set implements SetInterface {
 	}
 
 	public Set intersection(Set set) {
-		Set result = new Set();
-
-		for (int i = 0; i < set.nOE; i++) {
-			if (isInSet(set.elements[i])) {
-				result.addElement(set.elements[i]);
-			}
-		}
-
-		return result;
+		return union(set).difference(difference(set)).difference(set.difference(this));
 	}
 
 	public Set union(Set set) throws Exception {
