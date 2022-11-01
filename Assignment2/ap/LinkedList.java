@@ -29,7 +29,7 @@ public class LinkedList<E extends Comparable<E>> implements ListInterface<E> {
 	}
 
 	public boolean isEmpty() {
-		return size() == 0 ? true : false;
+		return nOE == 0;
 	}
 
 	public LinkedList<E> init() {
