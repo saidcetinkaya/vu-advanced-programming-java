@@ -65,19 +65,7 @@ public class Set<T extends Comparable<T>> implements SetInterface<T> {
 	}
 
 	public Set<T> intersection(SetInterface<T> set) {
-		Set<T> result = new Set<T>();
-		int setSize = size();
-
-		if (!set.isEmpty() && elements.goToFirst()) {
-			for (int i = 0; i < setSize; i++) {
-				if (set.isInSet(get())) {
-					result.add(get());
-				}
-				elements.goToNext();
-			}
-		}
-		
-		return result;
+		return union(set).difference(difference(set)).difference(set.difference(this));
 	}
 
 	public Set<T> union(SetInterface<T> set) {
