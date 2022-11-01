@@ -29,7 +29,7 @@ public class Set implements SetInterface {
 
 	public void addElement(Identifier element) {
 		elements[nOE] = new Identifier(element);
-		nOE++;// throws error. look at implementation in main. then change union .
+		nOE++;
 	}
 
 	public Identifier getElement() {
@@ -98,7 +98,7 @@ public class Set implements SetInterface {
 	}
 
 	public boolean isEmpty() {
-		return nOE == 0 ? true : false;
+		return nOE == 0;
 	}
 
 	public int size() {
